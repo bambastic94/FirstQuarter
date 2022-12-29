@@ -73,7 +73,28 @@ bool ConfirmInput(string text)
 void PrintAnswer(string[] array)
 {
     PrintArray(array);
-    System.Console.WriteLine();
+    System.Console.WriteLine("\nОтсортированный вариант:");
     string[] arrayEnd = ThreeSymbols(array);
     PrintArray(arrayEnd);
+}
+
+string answer = (PromptString("Введете матрицу в ручную?(Y/N)"));
+
+while (answer != "Y" && answer != "N")
+{
+    answer = PromptString("Повторите ответ(Y/N)");
+}
+
+if (ConfirmInput(answer))
+{
+    int count = PromptInt32("Какое количество элементов вы желаете ввести?");
+    string[] wordsSelf = CreateArray(count);
+    Console.WriteLine("Это ваша матрица:");
+    PrintAnswer(wordsSelf);
+}
+else
+{
+    string[] array = ThreeSymbols(words);
+    Console.WriteLine("Это стандартная матрица:");
+    PrintAnswer(words);
 }
