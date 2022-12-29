@@ -37,3 +37,43 @@ string[] ThreeSymbols(string[] array)
     }
     return line;
 }
+
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+}
+
+string PromptString(string message)
+{
+    System.Console.WriteLine($"{message} >");
+    return Convert.ToString(Console.ReadLine());
+}
+
+int PromptInt32(string message)
+{
+    System.Console.WriteLine($"{message} >");
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+bool ConfirmInput(string text)
+{
+    if (text == "Y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void PrintAnswer(string[] array)
+{
+    PrintArray(array);
+    System.Console.WriteLine();
+    string[] arrayEnd = ThreeSymbols(array);
+    PrintArray(arrayEnd);
+}
